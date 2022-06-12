@@ -1,39 +1,9 @@
-<?php
-// session_start();
-
-// if (isset($_SESSION['admin'])) {
-//   header('location: ./home admin.php');
-// } else if (isset($_SESSION['guru'])) {
-//   header('location: ./home guru.php');
-// }
-
-// if (isset($_GET['pesan'])) {
-//   if ($_GET['pesan'] == "gagal") {
-//     echo '<script type ="text/JavaScript">';
-//     echo 'alert("Login gagal! username dan password salah!")';
-//     echo '</script>';
-//   }
-// }
-// $usernameErr = $passwordErr = "";
-// $username = $password = "";
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//   if (empty($_POST["username"])) {
-//     $usernameErr = "Username is required";
-//   }
-//   if (empty($_POST["password"])) {
-//     $passwordErr = "Password is required";
-//   }
-// }
-
-// 
-?>
-
 <!DOCTYPE html>
 <html>
 
 <head>
   <script src=" https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <title>TK Dharma Wanita | Login</title>
+  <title>Login | TK Dharma Wanita</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <style>
     body {

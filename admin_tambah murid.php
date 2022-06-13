@@ -68,13 +68,13 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
               <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                 <div class="card-body p-4 p-md-5">
                   <h3 class="mb-3 pb-2 pb-md-0 mb-md-5">Tambah Data Murid</h3>
-                  <form>
+                  <form method="POST" action="insert_murid.php">
 
                     <div class="row">
                       <div class="col mb-2">
 
                         <div class="form-outline">
-                          <input type="text" id="firstName" class="form-control form-control-lg" />
+                          <input type="text" id="firstName" class="form-control form-control-lg" name="nama_murid" />
                           <label class="form-label" for="firstName">Nama Lengkap Anak</label>
                         </div>
 
@@ -85,7 +85,7 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
                       <div class="col-md-6 mb-2 d-flex align-items-center">
 
                         <div class="form-outline datepicker w-100">
-                          <input type="date" class="form-control form-control-lg" id="birthdayDate" />
+                          <input type="date" class="form-control form-control-lg" id="birthdayDate" name="tgl_lahir_murid" />
                           <label for="birthdayDate" class="form-label">Tanggal Lahir</label>
                         </div>
 
@@ -95,18 +95,13 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
                         <h6 class="mb-2 pb-1">Gender: </h6>
 
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender" value="option1" checked />
-                          <label class="form-check-label" for="femaleGender">Female</label>
+                          <input class="form-check-input" type="radio" name="gender_murid" id="femaleGender" value="Laki-laki" checked />
+                          <label class="form-check-label" for="femaleGender">Laki-laki</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender" value="option2" />
-                          <label class="form-check-label" for="maleGender">Male</label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender" value="option3" />
-                          <label class="form-check-label" for="otherGender">Other</label>
+                          <input class="form-check-input" type="radio" name="gender_murid" id="maleGender" value="Perempuan" />
+                          <label class="form-check-label" for="maleGender">Perempuan</label>
                         </div>
 
                       </div>
@@ -116,7 +111,7 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
                       <div class="col-md-6 mb-2 pb-2">
 
                         <div class="form-outline">
-                          <input type="text" id="emailAddress" class="form-control form-control-lg" />
+                          <input type="text" id="emailAddress" class="form-control form-control-lg" name="nama_ayah" />
                           <label class="form-label" for="emailAddress">Nama Ayah</label>
                         </div>
 
@@ -124,7 +119,7 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
                       <div class="col-md-6 mb-2 pb-2">
 
                         <div class="form-outline">
-                          <input type="text" id="phoneNumber" class="form-control form-control-lg" />
+                          <input type="text" id="phoneNumber" class="form-control form-control-lg" name="nama_ibu" />
                           <label class="form-label" for="phoneNumber">Nama Ibu</label>
                         </div>
 
@@ -135,7 +130,7 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
                       <div class="col mb-2">
 
                         <div class="form-outline">
-                          <input type="text" id="firstName" class="form-control form-control-lg" />
+                          <input type="text" id="firstName" class="form-control form-control-lg" name="alamat" />
                           <label class="form-label" for="firstName">Alamat</label>
                         </div>
 
@@ -146,14 +141,14 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
                       <div class="col-md-6 mb-2 pb-2">
 
                         <div class="form-outline">
-                          <input type="text" id="emailAddress" class="form-control form-control-lg" />
+                          <input type="text" id="emailAddress" class="form-control form-control-lg" name="no_tlp_ortu" />
                           <label class="form-label" for="emailAddress">Nomor Telpon Orang Tua</label>
                         </div>
 
                       </div>
                       <div class="col-md-6 mb-2 pb-2">
-                        <h6 class="mb-2 pb-1">Kelas</h6>
-                        <select class="select" name="kelas">
+                        <label class="form-label select-label">Kelas</label>
+                        <select class="select form-control-lg" name="kelas">
                           <option value="1" disabled>Kelas</option>
                           <option value="A">A</option>
                           <option value="B">B</option>

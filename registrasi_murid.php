@@ -73,11 +73,17 @@
                 </div>
                 <div class="col-md-6 mb-2">
 
-                  <select class="select" name="gender_murid">
-                    <option value="1" disabled>Gender</option>
-                    <option value="Laki-laki">Laki-laki</option>
-                    <option value="Perempuan">Perempuan</option>
-                  </select>
+                  <p class="form-label mb-2 pb-1">Gender: </p>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender_murid" id="femaleGender" value="Laki-laki" checked />
+                    <label class="form-check-label" for="femaleGender">Laki-laki</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender_murid" id="maleGender" value="Perempuan" />
+                    <label class="form-check-label" for="maleGender">Perempuan</label>
+                  </div>
 
                 </div>
               </div>
@@ -106,8 +112,6 @@
                 <label class="form-label" for="form3Example1q">Alamat</label>
               </div>
 
-
-
               <div class="row">
                 <div class="col-md-6 mb-2">
 
@@ -119,7 +123,8 @@
                 </div>
                 <div class="col-md-6 mb-2">
 
-                  <select class="select" name="kelas">
+                  <label class="form-label select-label">Kelas</label>
+                  <select class="select form-control-lg" name="kelas">
                     <option value="1" disabled>Kelas</option>
                     <option value="A">A</option>
                     <option value="B">B</option>

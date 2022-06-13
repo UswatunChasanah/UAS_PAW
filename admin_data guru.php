@@ -56,47 +56,60 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
     </div>
 
     <div class="container mt-2">
-      <h3 style="color:black; text-align:left;">Data Guru</h3>
-      <table class="table table-hover" style="text-align: center;">
-        <thead>
-          <tr>
-            <th scope="col">No</th>
-            <th scope="col">NIP</th>
-            <th scope="col">Nama</th>
-            <th scope="col">Tanggal lahir</th>
-            <th scope="col">Kelas</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody class="table-group-divider">
-          <?php
-          include "koneksi.php";
-          $sql = "SELECT * FROM guru";
-          $hasil = mysqli_query($koneksi, $sql);
-          $no = 1;
+      <div class="container mt-2">
+        <div class="row mt-5">
+          <div class="col">
+            <h3 style="color:black; text-align:left; font-weight:bold;">Data Guru</h3>
+          </div>
+          <div class="col">
+            <form action="/search" method="POST">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" name="search" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary btn-secondary" type="submit" style="color: white">Cari</button>
+            </form>
+          </div>
+        </div>
 
-          while ($row = mysqli_fetch_array($hasil)) {
-          ?>
+        <table class="table table-hover" style="text-align: center;">
+          <thead>
             <tr>
-              <th scope="row"><?php echo $no ?></th>
-              <td><?php echo $row["NIP"]; ?></td>
-              <td><?php echo $row["nama_guru"]; ?></td>
-              <td><?php echo $row["tgl_lahir_guru"]; ?></td>
-              <td><?php echo $row["kelas"]; ?></td>
-              <td>
-                <button type="button" class="btn btn-warning" style="color:white ;">Edit</button>
-                <button type="button" class="btn btn-danger">Delete</button>
-                <button type="button" class="btn btn-primary">Show Detail</button>
-              </td>
+              <th scope="col">No</th>
+              <th scope="col">NIP</th>
+              <th scope="col">Nama</th>
+              <th scope="col">Tanggal lahir</th>
+              <th scope="col">Kelas</th>
+              <th scope="col">Action</th>
             </tr>
-          <?php
-            $no += 1;
-          } ?>
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody class="table-group-divider">
+            <?php
+            include "koneksi.php";
+            $sql = "SELECT * FROM guru";
+            $hasil = mysqli_query($koneksi, $sql);
+            $no = 1;
 
-  </div>
+            while ($row = mysqli_fetch_array($hasil)) {
+            ?>
+              <tr>
+                <th scope="row"><?php echo $no ?></th>
+                <td><?php echo $row["NIP"]; ?></td>
+                <td><?php echo $row["nama_guru"]; ?></td>
+                <td><?php echo $row["tgl_lahir_guru"]; ?></td>
+                <td><?php echo $row["kelas"]; ?></td>
+                <td>
+                  <button type="button" class="btn btn-warning" style="color:white ;">Edit</button>
+                  <button type="button" class="btn btn-danger">Delete</button>
+                  <button type="button" class="btn btn-primary">Show Detail</button>
+                </td>
+              </tr>
+            <?php
+              $no += 1;
+            } ?>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
 </body>
 
 </html>

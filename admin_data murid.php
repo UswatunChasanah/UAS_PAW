@@ -41,7 +41,7 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
     <a href="admin_data murid a.php" class="w3-bar-item w3-button">Data Murid A</a>
     <a href="admin_data murid b.php" class="w3-bar-item w3-button">Data Murid B</a>
     <a href="admin_data guru.php" class="w3-bar-item w3-button">Data Guru</a>
-    <a href="tambah murid.php" class="w3-bar-item w3-button">Tambah Data Murid</a>
+    <a href="admin_tambah murid.php" class="w3-bar-item w3-button">Tambah Data Murid</a>
     <a href="admin_tambah guru.php" class="w3-bar-item w3-button">Tambah Data Guru</a>
     <a href="logout.php" class="w3-bar-item w3-button">Logout</a>
   </div>
@@ -55,7 +55,19 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
     </div>
 
     <div class="container mt-2">
-      <h3 style="color:black; text-align:left;">Data Murid</h3>
+      <div class="row mt-5">
+        <div class="col">
+          <h3 style="color:black; text-align:left; font-weight:bold;">Data Murid</h3>
+        </div>
+        <div class="col">
+          <form action="/search" method="POST">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" name="search" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <button class="btn btn-outline-secondary btn-secondary" type="submit" style="color: white">Cari</button>
+          </form>
+        </div>
+      </div>
+
       <table class="table table-hover" style="text-align: center;">
         <thead>
           <tr>
@@ -85,9 +97,9 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
               <td><?php echo $row["gender_murid"]; ?></td>
               <td><?php echo $row["kelas"]; ?></td>
               <td>
-                <button type="button" class="btn btn-warning" style="color:white ;">Edit</button>
-                <button type="button" class="btn btn-danger">Delete</button>
-                <button type="button" class="btn btn-primary">Show Detail</button>
+                <a href="admin_edit murid.php?id_murid=<?php echo $row["id_murid"] ?>"><button type="button" class="btn btn-warning" style="color:white ;">Edit</button></a>
+                <a href="delete murid.php?id_murid=<?php echo $row["id_murid"] ?>"><button type="button" class="btn btn-danger">Delete</button></a>
+                <a href="edit murid.php"><button type="button" class="btn btn-primary">Show Detail</button>
               </td>
             </tr>
 

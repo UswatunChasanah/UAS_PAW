@@ -13,7 +13,7 @@
   $sql = "INSERT INTO murid VALUES (NULL,'$nama','$lahir','$gender','$ayah','$ibu','$tlp','$alamat','$kelas','$foto')";
   $hasil = mysqli_query($koneksi,$sql);
   if (!$hasil){
-    echo "<script> alert('Data gagal ditambahkan')</script>";
+  echo "<script> alert('Data gagal ditambahkan')document.location.href='admin_data murid.php';</script>";
 	}else{
-		echo "<script> alert('Data berhasil ditambahkan')</script>";
+  echo "<script> alert('Data berhasil ditambahkan')document.location.href='admin_data murid.php';</script>";
   }

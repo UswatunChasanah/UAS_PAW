@@ -97,8 +97,8 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
                 <td><?php echo $row["tgl_lahir_guru"]; ?></td>
                 <td><?php echo $row["kelas"]; ?></td>
                 <td>
-                  <button type="button" class="btn btn-warning" style="color:white ;">Edit</button>
-                  <button type="button" class="btn btn-danger">Delete</button>
+                  <a href="admin_edit guru.php?id=<?php echo $row["id"] ?>"><button type="button" class="btn btn-warning" style="color:white ;">Edit</button></a>
+                  <a href="delete guru.php?id=<?php echo $row["id"] ?>"><button type="button" class="btn btn-danger">Delete</button></a>
                   <button type="button" class="btn btn-primary">Show Detail</button>
                 </td>
               </tr>

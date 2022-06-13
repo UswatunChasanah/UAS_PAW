@@ -17,7 +17,7 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <title>Tambah Data Murid | TK Dharma Wanita</title>
+  <title>Tambah Data Guru | TK Dharma Wanita</title>
   <style>
     h5,
     h1 {
@@ -67,28 +67,29 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
             <div class="col-12 col-lg-9 col-xl-7">
               <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                 <div class="card-body p-4 p-md-5">
-                  <h3 class="mb-3 pb-2 pb-md-0 mb-md-5">Edit Data Murid</h3>
+                  <h3 class="mb-3 pb-2 pb-md-0 mb-md-5">Edit Data Guru</h3>
 
                   <?php
                   include "koneksi.php";
 
-                  $id = $_GET["id_murid"];
+                  $id = $_GET["id"];
 
-                  $sql = "SELECT * FROM murid WHERE id_murid = '$id'";
+                  $sql = "SELECT * FROM guru WHERE id = '$id'";
                   $hasil = mysqli_query($koneksi, $sql);
                   if (!$hasil) {
                     echo "Edit gagal";
                   }
                   while ($row = mysqli_fetch_array($hasil)) {
                   ?>
-                    <form method="POST" action="edit murid.php">
-                      <input type="hidden" name="id_murid" value="<?php echo $row["id_murid"] ?>">
+
+                    <form method="POST" action="edit guru.php">
+                      <input type="hidden" name="id" value="<?php echo $row["id"] ?>">
                       <div class="row">
                         <div class="col mb-2">
 
                           <div class="form-outline">
-                            <input type="text" id="firstName" class="form-control form-control-lg" name="nama_murid" value="<?php echo $row["nama_murid"] ?>" />
-                            <label class="form-label" for="firstName">Nama Lengkap Anak</label>
+                            <input type="text" id="firstName" class="form-control form-control-lg" name="nama_guru" value="<?php echo $row["nama_guru"] ?>" />
+                            <label class=" form-label" for="firstName">Nama Lengkap</label>
                           </div>
 
                         </div>
@@ -98,44 +99,16 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
                         <div class="col-md-6 mb-2 d-flex align-items-center">
 
                           <div class="form-outline datepicker w-100">
-                            <input type="date" class="form-control form-control-lg" id="birthdayDate" name="tgl_lahir_murid" value="<?php echo $row["tgl_lahir_murid"] ?>" />
-                            <label for="birthdayDate" class="form-label">Tanggal Lahir</label>
+                            <input type="date" class="form-control form-control-lg" id="birthdayDate" name="tgl_lahir_guru" value="<?php echo $row["tgl_lahir_guru"] ?>" />
+                            <label for=" birthdayDate" class="form-label">Tanggal Lahir</label>
                           </div>
 
                         </div>
                         <div class="col-md-6 mb-2">
-
-                          <h6 class="mb-2 pb-1">Gender: </h6>
-
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender_murid" id="femaleGender" value="Laki-laki" checked />
-                            <label class="form-check-label" for="femaleGender">Laki-laki</label>
+                          <div class="form-outline datepicker w-100">
+                            <input type="text" class="form-control form-control-lg" name="NIP" value="<?php echo $row["NIP"] ?>" />
+                            <label class=" form-label">NIP</label>
                           </div>
-
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender_murid" id="maleGender" value="Perempuan" />
-                            <label class="form-check-label" for="maleGender">Perempuan</label>
-                          </div>
-
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-md-6 mb-2 pb-2">
-
-                          <div class="form-outline">
-                            <input type="text" id="emailAddress" class="form-control form-control-lg" name="nama_ayah" value="<?php echo $row["nama_ayah"] ?>" />
-                            <label class="form-label" for="emailAddress">Nama Ayah</label>
-                          </div>
-
-                        </div>
-                        <div class="col-md-6 mb-2 pb-2">
-
-                          <div class="form-outline">
-                            <input type="text" id="phoneNumber" class="form-control form-control-lg" name="nama_ibu" value="<?php echo $row["nama_ibu"] ?>" />
-                            <label class="form-label" for="phoneNumber">Nama Ibu</label>
-                          </div>
-
                         </div>
                       </div>
 
@@ -144,7 +117,7 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
 
                           <div class="form-outline">
                             <input type="text" id="firstName" class="form-control form-control-lg" name="alamat" value="<?php echo $row["alamat"] ?>" />
-                            <label class="form-label" for="firstName">Alamat</label>
+                            <label class=" form-label" for="firstName">Alamat</label>
                           </div>
 
                         </div>
@@ -154,14 +127,14 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
                         <div class="col-md-6 mb-2 pb-2">
 
                           <div class="form-outline">
-                            <input type="text" id="emailAddress" class="form-control form-control-lg" name="no_tlp_ortu" value="<?php echo $row["no_tlp_ortu"] ?>" />
-                            <label class="form-label" for="emailAddress">Nomor Telpon Orang Tua</label>
+                            <input type="text" id="emailAddress" class="form-control form-control-lg" name="nomor_tlp_guru" value="<?php echo $row["nomor_tlp_guru"] ?>" />
+                            <label class=" form-label" for="emailAddress">Nomor Telpon</label>
                           </div>
 
                         </div>
                         <div class="col-md-6 mb-2 pb-2">
-                          <h6 class="mb-2 pb-1">Kelas</h6>
-                          <select class="select" name="kelas" value="<?php echo $row["kelas"] ?>">
+                          <label class="form-label select-label">Kelas</label>
+                          <select class="select form-control-lg" name="kelas" value="<?php echo $row["kelas"] ?>">
                             <option value="1" disabled>Kelas</option>
                             <option value="A">A</option>
                             <option value="B">B</option>
@@ -174,7 +147,7 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
 
                           <div class="form-outline">
                             <input type="file" id="form3Example1w" class="form-control" name="foto" value="<?php echo $row["foto"] ?>" />
-                            <label class="form-label" for="form3Example1w">Upload Foto Anak</label>
+                            <label class=" form-label" for="form3Example1w">Upload Foto</label>
                           </div>
 
                         </div>
@@ -183,6 +156,7 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
                       <div class="mt-4 pt-2">
                         <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
                       </div>
+
                     </form>
                   <?php } ?>
                 </div>

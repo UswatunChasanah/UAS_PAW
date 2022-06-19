@@ -8,10 +8,12 @@ $tlp = $_POST["nomor_tlp_guru"];
 $kelas = $_POST["kelas"];
 $foto = $_POST["foto"];
 
-$sql = "INSERT INTO guru VALUES ('$nip','$nama','$lahir','$alamat','$tlp','$kelas','$foto')";
+$sql = "INSERT INTO guru VALUES (NULL,'$nip','$nama','$lahir','$alamat','$tlp','$kelas','$foto')";
 $hasil = mysqli_query($koneksi, $sql);
 if (!$hasil) {
   echo "<script> alert('Data gagal ditambahkan')</script>";
 } else {
   echo "<script> alert('Data berhasil ditambahkan')</script>";
 }
+
+?>

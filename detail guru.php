@@ -61,8 +61,8 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
 
     <?php
     include "koneksi.php";
-    $id = $_GET["id_murid"];
-    $sql = "SELECT * FROM murid WHERE id_murid = '$id'";
+    $id = $_GET["id"];
+    $sql = "SELECT * FROM guru WHERE id = '$id'";
     $hasil = mysqli_query($koneksi, $sql);
 
     while ($row = mysqli_fetch_array($hasil)) {
@@ -77,7 +77,7 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
                   <h3 style="color:black; font-weight:bold;">Data Lengkap</h3>
                   <hr>
                   <img src="<?php echo $row["foto"]; ?>" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                  <h5 style="color:black;"><?php echo $row["nama_murid"] ?></h5>
+                  <h5 style="color:black;"><?php echo $row["nama_guru"] ?></h5>
                 </div>
               </div>
             </div>
@@ -86,10 +86,19 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <p class="mb-0" style="color:black;">ID Murid</p>
+                      <p class="mb-0" style="color:black;">ID Guru</p>
                     </div>
                     <div class="col-sm-9">
-                      <p class="text-muted mb-0"><?php echo $row["id_murid"]; ?></p>
+                      <p class="text-muted mb-0"><?php echo $row["id"]; ?></p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0" style="color:black;">NIP</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0"><?php echo $row["NIP"]; ?></p>
                     </div>
                   </div>
                   <hr>
@@ -98,7 +107,7 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
                       <p class="mb-0" style="color:black;">Nama Lengkap</p>
                     </div>
                     <div class="col-sm-9">
-                      <p class="text-muted mb-0"><?php echo $row["nama_murid"]; ?></p>
+                      <p class="text-muted mb-0"><?php echo $row["nama_guru"]; ?></p>
                     </div>
                   </div>
                   <hr>
@@ -107,43 +116,7 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
                       <p class="mb-0" style="color:black;">Tanggal Lahir</p>
                     </div>
                     <div class="col-sm-9">
-                      <p class="text-muted mb-0"><?php echo $row["tgl_lahir_murid"]; ?></p>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="mb-0" style="color:black;">Gender</p>
-                    </div>
-                    <div class="col-sm-9">
-                      <p class="text-muted mb-0"><?php echo $row["gender_murid"]; ?></p>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="mb-0" style="color:black;">Nama Ayah</p>
-                    </div>
-                    <div class="col-sm-9">
-                      <p class="text-muted mb-0"><?php echo $row["nama_ayah"]; ?></p>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="mb-0" style="color:black;">Nama Ibu</p>
-                    </div>
-                    <div class="col-sm-9">
-                      <p class="text-muted mb-0"><?php echo $row["nama_ibu"]; ?></p>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="mb-0" style="color:black;">No.Telpon Orang Tua</p>
-                    </div>
-                    <div class="col-sm-9">
-                      <p class="text-muted mb-0"><?php echo $row["no_tlp_ortu"]; ?></p>
+                      <p class="text-muted mb-0"><?php echo $row["tgl_lahir_guru"]; ?></p>
                     </div>
                   </div>
                   <hr>
@@ -158,6 +131,15 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
+                      <p class="mb-0" style="color:black;">No.Telpon</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0"><?php echo $row["nomor_tlp_guru"]; ?></p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
                       <p class="mb-0" style="color:black;">Kelas</p>
                     </div>
                     <div class="col-sm-9">
@@ -165,52 +147,15 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
                     </div>
                   </div>
                   <hr>
-
-
-                  <!-- <table class="table table-hover" style="text-align: center;">
-              <thead>
-                <tr>
-                  <th scope="col">No</th>
-                  <th scope="col">ID</th>
-                  <th scope="col">Nama</th>
-                  <th scope="col">Tanggal Lahir</th>
-                  <th scope="col">Gender</th>
-                  <th scope="col">Kelas</th>
-                  <th scope="col">Action</th>
-                </tr>
-              </thead>
-              <tbody class="table-group-divider">
-                <?php
-                include "koneksi.php";
-                $id = $_GET["id_murid"];
-
-                $sql = "SELECT * FROM murid WHERE id_murid = '$id'";
-                $hasil = mysqli_query($koneksi, $sql);
-                $no = 1;
-
-                while ($row = mysqli_fetch_array($hasil)) {
-                ?>
-                  <tr>
-                    <th scope="row"><?php echo $no; ?></th>
-                    <td><?php echo $row["id_murid"]; ?></td>
-                    <td><?php echo $row["nama_murid"]; ?></td>
-                    <td><?php echo $row["tgl_lahir_murid"]; ?></td>
-                    <td><?php echo $row["gender_murid"]; ?></td>
-                    <td><?php echo $row["kelas"]; ?></td>
-                    <td>
-                      <img src="<?php echo $row["foto"]; ?>" alt="foto" width="200">
-                    </td>
-                  </tr>
-
-                <?php
-                } ?>
-              </tbody>
-            </table> -->
-
-                <?php } ?>
                 </div>
-
               </div>
+            </div>
+          </div>
+        </section>
+      <?php } ?>
+      </div>
+
+  </div>
 </body>
 
 </html>

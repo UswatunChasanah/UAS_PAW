@@ -66,27 +66,28 @@
     <p style="text-align:center; font-weight:bold;">Hubungi kami / Contact Us</p>
     <div class="row mt-5">
       <div class="col mt-5">
-        <img src="arafah.jpg" alt="arafah" width="200" style="border-radius: 100%;">
+        <img src="arafah rianti.jpg" alt="arafah" width="200" style="border-radius: 100%;">
         <p style="font-weight:bold;">Arafah Rianti</p>
         <p>083117552207</p>
       </div>
       <div class="col mt-5">
-        <img src="dinda.jpg" alt="dinda" width="200" style="border-radius: 100%;">
+        <img src="dinda hauw.jpg" alt="dinda" width="200" style="border-radius: 100%;">
         <p style="font-weight:bold;">Arafah Rianti</p>
         <p>083117552207</p>
       </div>
       <div class="col mt-5">
-        <img src="ria.jpg" alt="ria" width="200" style="border-radius: 100%;">
+        <img src="ricis.jpg" alt="ria" width="200" style="border-radius: 100%;">
         <p style="font-weight:bold;">Arafah Rianti</p>
         <p>083117552207</p>
       </div>
       <div class="col mt-5">
-        <img src="tsana.jpg" alt="tsana" width="200" style="border-radius: 100%;">
+        <img src="sana.jpg" alt="tsana" width="200" style="border-radius: 100%;">
         <p style="font-weight:bold;">Arafah Rianti</p>
         <p>083117552207</p>
       </div>
     </div>
   </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
 </html>

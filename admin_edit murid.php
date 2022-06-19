@@ -161,7 +161,7 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
                         </div>
                         <div class="col-md-6 mb-2 pb-2">
                           <h6 class="mb-2 pb-1">Kelas</h6>
-                          <select class="select" name="kelas" value="<?php echo $row["kelas"] ?>">
+                          <select class="select form-control-lg" name="kelas" value="<?php echo $row["kelas"] ?>">
                             <option value="1" disabled>Kelas</option>
                             <option value="A">A</option>
                             <option value="B">B</option>

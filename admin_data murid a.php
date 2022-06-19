@@ -99,7 +99,7 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
                 <td>
                   <a href="admin_edit murid.php?id_murid=<?php echo $row["id_murid"] ?>"><button type="button" class="btn btn-warning" style="color:white ;">Edit</button></a>
                   <a href="delete murid.php?id_murid=<?php echo $row["id_murid"] ?>"><button type="button" class="btn btn-danger">Delete</button></a>
-                  <a href="edit murid.php"><button type="button" class="btn btn-primary">Show Detail</button>
+                  <a href="detail murid.php?id_murid=<?php echo $row["id_murid"] ?>"><button type="button" class="btn btn-primary">Show Detail</button>
                 </td>
               </tr>
 

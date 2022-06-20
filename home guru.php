@@ -30,6 +30,11 @@ if ($_SESSION['level'] != 'guru' || empty($_SESSION['login'])) {
       text-align: center;
       color: white;
     }
+
+    body {
+      background-image: url('bgguru.jpg');
+      background-size: cover;
+    }
   </style>
 </head>
 
@@ -38,9 +43,9 @@ if ($_SESSION['level'] != 'guru' || empty($_SESSION['login'])) {
     <h3 class="w3-bar-item">Guru</h3>
     <a href="home guru.php" class="w3-bar-item w3-button">Dashboard</a>
     <a href="guru_data_murid.php" class="w3-bar-item w3-button">Data Murid</a>
-    <a href="data murid a.php" class="w3-bar-item w3-button">Data Murid A</a>
-    <a href="data murid b.php" class="w3-bar-item w3-button">Data Murid B</a>
-    <a href="#" class="w3-bar-item w3-button">Tambah Data Murid</a>
+    <a href="guru_data_murid a.php" class="w3-bar-item w3-button">Data Murid A</a>
+    <a href="guru_data_murid b.php" class="w3-bar-item w3-button">Data Murid B</a>
+    <a href="guru_tambah_murid.php" class="w3-bar-item w3-button">Tambah Data Murid</a>
     <a href="logout.php" class="w3-bar-item w3-button">Logout</a>
   </div>
 
@@ -48,7 +53,7 @@ if ($_SESSION['level'] != 'guru' || empty($_SESSION['login'])) {
   <div style="margin-left:15%">
 
     <div class="shadow mb-3 bg-body rounded">
-      <div class="w3-container" style="background-color: rgb(19, 110, 155); color:white;">
+      <div class="w3-container" style="background-color:blueviolet; color:white;">
         <h1>TK DHARMA WANITA BALONGREJO</h1>
       </div>
     </div>

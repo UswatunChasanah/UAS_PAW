@@ -55,7 +55,7 @@ if ($_SESSION['level'] != 'guru' || empty($_SESSION['login'])) {
     <div class="container mt-2">
       <div class="row mt-5">
         <div class="col">
-          <h3 style="color:black; text-align:left; font-weight:bold;">Data Murid</h3>
+          <h3 style="color:black; text-align:left; font-weight:bold;">Data Murid B</h3>
         </div>
         <div class="col">
           <form action="/search" method="POST">
@@ -82,7 +82,7 @@ if ($_SESSION['level'] != 'guru' || empty($_SESSION['login'])) {
           <tbody class="table-group-divider">
             <?php
             include "koneksi.php";
-            $sql = "SELECT * FROM murid";
+            $sql = "SELECT * FROM murid WHERE kelas = 'B'";
             $hasil = mysqli_query($koneksi, $sql);
             $no = 1;
 

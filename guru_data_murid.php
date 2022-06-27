@@ -57,13 +57,13 @@ if ($_SESSION['level'] != 'guru' || empty($_SESSION['login'])) {
         <div class="col">
           <h3 style="color:black; text-align:left; font-weight:bold;">Data Murid</h3>
         </div>
-        <div class="col">
+        <!-- <div class="col">
           <form action="/search" method="POST">
             <div class="input-group mb-3">
               <input type="text" class="form-control" name="search" aria-label="Recipient's username" aria-describedby="button-addon2">
               <button class="btn btn-outline-secondary btn-secondary" type="submit" style="color: white">Cari</button>
           </form>
-        </div>
+        </div> -->
       </div>
 
       <div class="container mt-2">
@@ -97,7 +97,7 @@ if ($_SESSION['level'] != 'guru' || empty($_SESSION['login'])) {
                 <td><?php echo $row["kelas"]; ?></td>
                 <td>
                   <a href="guru_edit murid.php?id_murid=<?php echo $row["id_murid"] ?>"><button type="button" class="btn btn-warning" style="color:white ;">Edit</button></a>
-                  <a href="delete murid.php?id_murid=<?php echo $row["id_murid"] ?>"><button type="button" class="btn btn-danger">Delete</button></a>
+                  <a href="guru_delete murid.php?id_murid=<?php echo $row["id_murid"] ?>"><button type="button" class="btn btn-danger">Delete</button></a>
                   <a href="guru_detail murid.php?id_murid=<?php echo $row["id_murid"] ?>"><button type="button" class="btn btn-primary">Show Detail</button>
                 </td>
               </tr>

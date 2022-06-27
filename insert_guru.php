@@ -11,9 +11,9 @@ $foto = $_POST["foto"];
 $sql = "INSERT INTO guru VALUES (NULL,'$nip','$nama','$lahir','$alamat','$tlp','$kelas','$foto')";
 $hasil = mysqli_query($koneksi, $sql);
 if (!$hasil) {
-  echo "<script> alert('Data gagal ditambahkan')</script>";
+  echo "<script> alert('Data gagal ditambahkan'); document.location.href='admin_data guru.php';</script>";
 } else {
-  echo "<script> alert('Data berhasil ditambahkan')</script>";
+  echo "<script> alert('Data berhasil ditambahkan'); document.location.href='admin_data guru.php';</script>";
 }
 
 ?>

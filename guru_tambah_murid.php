@@ -66,7 +66,7 @@ if ($_SESSION['level'] != 'guru' || empty($_SESSION['login'])) {
               <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                 <div class="card-body p-4 p-md-5">
                   <h3 class="mb-3 pb-2 pb-md-0 mb-md-5">Tambah Data Murid</h3>
-                  <form method="POST" action="insert_murid.php">
+                  <form method="POST" action="insert_murid guru.php">
 
                     <div class="row">
                       <div class="col mb-2">

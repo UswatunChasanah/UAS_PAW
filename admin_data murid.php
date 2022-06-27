@@ -59,13 +59,13 @@ if ($_SESSION['level'] != 'admin' || empty($_SESSION['login'])) {
         <div class="col">
           <h3 style="color:black; text-align:left; font-weight:bold;">Data Murid</h3>
         </div>
-        <div class="col">
+        <!-- <div class="col">
           <form action="/search" method="POST">
             <div class="input-group mb-3">
               <input type="text" class="form-control" name="search" aria-label="Recipient's username" aria-describedby="button-addon2">
               <button class="btn btn-outline-secondary btn-secondary" type="submit" style="color: white">Cari</button>
           </form>
-        </div>
+        </div> -->
       </div>
 
       <table class="table table-hover" style="text-align: center;">

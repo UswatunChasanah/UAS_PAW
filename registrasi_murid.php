@@ -55,10 +55,10 @@
           <div class="card-body p-4 p-md-5">
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Formulir Pendaftaran</h3>
 
-            <form class="px-md-2" method="POST" action="insert_murid.php">
+            <form class="px-md-2" method="POST" action="insert_murid user.php">
 
               <div class="form-outline mb-2">
-                <input type="text" id="form3Example1q" class="form-control" name="nama_murid" />
+                <input type="text" id="form3Example1q" class="form-control" name="nama_murid" require />
                 <label class="form-label" for="form3Example1q">Nama Lengkap Anak</label>
               </div>
 
@@ -66,7 +66,7 @@
                 <div class="col-md-6 mb-2">
 
                   <div class="form-outline datepicker">
-                    <input type="date" class="form-control" id="exampleDatepicker1" name="tgl_lahir_murid" />
+                    <input type="date" class="form-control" id="exampleDatepicker1" name="tgl_lahir_murid" require />
                     <label for="exampleDatepicker1" class="form-label">Tangggal Lahir</label>
                   </div>
 
@@ -76,12 +76,12 @@
                   <p class="form-label mb-2 pb-1">Gender: </p>
 
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gender_murid" id="femaleGender" value="Laki-laki" checked />
+                    <input class="form-check-input" type="radio" name="gender_murid" id="femaleGender" value="Laki-laki" require checked />
                     <label class="form-check-label" for="femaleGender">Laki-laki</label>
                   </div>
 
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gender_murid" id="maleGender" value="Perempuan" />
+                    <input class="form-check-input" type="radio" name="gender_murid" id="maleGender" value="Perempuan" require />
                     <label class="form-check-label" for="maleGender">Perempuan</label>
                   </div>
 
@@ -92,7 +92,7 @@
                 <div class="col-md-6 mb-2">
 
                   <div class="form-outline datepicker">
-                    <input type="text" class="form-control" id="exampleDatepicker1" name="nama_ayah" />
+                    <input type="text" class="form-control" id="exampleDatepicker1" name="nama_ayah" require />
                     <label for="exampleDatepicker1" class="form-label">Nama Ayah</label>
                   </div>
 
@@ -100,7 +100,7 @@
                 <div class="col-md-6 mb-2">
 
                   <div class="form-outline datepicker">
-                    <input type="text" class="form-control" id="exampleDatepicker1" name="nama_ibu" />
+                    <input type="text" class="form-control" id="exampleDatepicker1" name="nama_ibu" require />
                     <label for="exampleDatepicker1" class="form-label">Nama Ibu</label>
                   </div>
 
@@ -108,7 +108,7 @@
               </div>
 
               <div class="form-outline mb-2">
-                <input type="text" id="form3Example1q" class="form-control" name="alamat" />
+                <input type="text" id="form3Example1q" class="form-control" name="alamat" require />
                 <label class="form-label" for="form3Example1q">Alamat</label>
               </div>
 
@@ -116,7 +116,7 @@
                 <div class="col-md-6 mb-2">
 
                   <div class="form-outline datepicker">
-                    <input type="text" class="form-control" id="exampleDatepicker1" name="no_tlp_ortu" />
+                    <input type="text" class="form-control" id="exampleDatepicker1" name="no_tlp_ortu" require />
                     <label for="exampleDatepicker1" class="form-label">Nomor Telpon Orang Tua</label>
                   </div>
 
@@ -137,7 +137,7 @@
                 <div class="col-md-6">
 
                   <div class="form-outline">
-                    <input type="file" id="form3Example1w" class="form-control" name="foto" />
+                    <input type="file" id="form3Example1w" class="form-control" name="foto" require />
                     <label class="form-label" for="form3Example1w">Upload Foto Anak</label>
                   </div>
 
